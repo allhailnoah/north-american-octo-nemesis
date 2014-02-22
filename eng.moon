@@ -1,5 +1,12 @@
+require 'req'
+
+crnt = nil
+
+love.load = ->
+	st\switch "splash"
+
 love.update = (dt) ->
-	print "lol"
+	st.current\update(dt)
 
 love.draw = ->
-	love.graphics.print("lol", 400, 300)
+	st.current:draw!
