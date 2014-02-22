@@ -9,4 +9,4 @@ love.update = (dt) ->
 	st.current\update(dt)
 
 love.draw = ->
-	st.current:draw!
+	st.current\draw!

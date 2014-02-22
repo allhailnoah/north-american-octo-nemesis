@@ -10,7 +10,8 @@ export class FimichiSplash extends State
 		@fim = love.audio.newSource "splashers/fimichi.wav"
 		@delta = 0
 		@started = false
-	draw: ->
+	draw: =>
+		x = 0
 		if @delta < 0.95
 			x = 1
 		elseif @delta < 1.3
