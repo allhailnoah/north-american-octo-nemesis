@@ -1,3 +1,4 @@
+print "[state] Creating State general interface"
 export class State
 	new: =>
 	update: (dt) =>
@@ -8,12 +9,18 @@ export class State
 	mousereleased: (x, y, button) =>
 	resume: =>
 	pause: =>
-	getEscapeState: => return gamestates['menu']
+	getEscapeState: => return "menu"
+print "[state] Creating StateManager class"
 export class StateManager
 	new: =>
+		print "[state] Creating states storage"
 		@states = {}
 		@current = nil
-	add: (name, state) => @states[name] = state
+	add: (name, state) =>
+		print "[state] Adding state "..name.." to storage"
+		@states[name] = state
 	get: (name) => return @states[name]
 	gc: => return @current
-	switch: (name) => @current = @states[name]
+	switch: (name) =>
+		print "[state] Switching to "..name.." state"
+		@current = @states[name]
